@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html, body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #000;
+}
+.wrapper{
+    cursor: default;
+    width: 360px;
+    height: 100px;
+    background: linear-gradient(135deg, #480e6e 25%, #b91313 50%, #5d5d 100%);
+    border-radius: 10px;
+    animation: animate 1.5s linear infinite;
+}
+.wrapper .display{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1b1b1b;
+    border-radius: 6px;
+    width: 345px;
+    height: 85px;
+    text-align: center;
+    z-index: 99;
+}
+.wrapper .display #tempo{
+    line-height: 85px;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1;
+    background: linear-gradient(135deg, #902dd1 25%, #f03434 50%, #5d5d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+.wrapper .display,
+.wrapper span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.wrapper span{
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+.wrapper span:first-child{
+    filter: blur(10px);
+}
+.wrapper span:last-child{
+    filter: blur(20px);
+}
+@keyframes animate{
+    100%{
+        filter: hue-rotate(360deg)
+    }
+}
